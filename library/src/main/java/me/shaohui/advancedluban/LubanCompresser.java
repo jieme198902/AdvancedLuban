@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.Callable;
 
 import rx.Observable;
@@ -225,7 +226,7 @@ class LubanCompresser {
     }
 
     private String getCacheFilePath() {
-        StringBuilder name = new StringBuilder("Luban_" + System.currentTimeMillis());
+        StringBuilder name = new StringBuilder("Luban_" + UUID.randomUUID().toString());
         if (mLuban.compressFormat == Bitmap.CompressFormat.WEBP) {
             name.append(".webp");
         } else {
